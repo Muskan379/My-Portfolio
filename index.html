@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <!-- =========================
+    Muskan Ansari — Personal Portfolio (Single File)
+    Tech: HTML5 + Tailwind (CDN) + Vanilla JS.
+    Notes:
+    - Replace placeholder images from /img/ folder
+    - Customize colors and content marked with TODO
+  ========================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muskan Ansari — Portfolio</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="Portfolio of Muskan Ansari — Creative &amp; Passionate Professional. Projects, skills, education, and contact.">
+  <meta name="keywords" content="Muskan Ansari, portfolio, UI/UX, web developer, designer, projects, resume">
+  <meta name="author" content="Muskan Ansari">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Muskan Ansari — Portfolio">
+  <meta property="og:description" content="Creative &amp; Passionate Professional — explore projects, skills, and contact details.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://i.postimg.cc/N0j54QTj/muskan-portfolio-image.jpg">
+  <meta property="og:url" content="https://your-domain.com">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Muskan Ansari — Portfolio">
+  <meta name="twitter:description" content="Creative &amp; Passionate Professional — explore projects, skills, and contact details.">
+  <meta name="twitter:image" content="/img/og-cover.jpg">
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="http://127.0.0.1:5500/img/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="Muskan%20Ansari%20%E2%80%94%20Portfolio_files/css2.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="Muskan%20Ansari%20%E2%80%94%20Portfolio_files/all.min.css" integrity="sha512-u6VvQ3yC5Q8Q8bS2m9U5ZhvC9J9i4rR4kJg1kF4u1zqkN2K1Vv1Jm4Jc9E3m+z7h8cV0S6wz9yJY1y8lXkYw3g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Tailwind (CDN) -->
+  <script src="Muskan%20Ansari%20%E2%80%94%20Portfolio_files/3.4.17"></script>
+  <script>
+    // Tailwind config: brand color and pastel palette
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: '#007BFF',
+            pastel: {
+              50: '#f8fbff',
+              100: '#eef5ff',
+              200: '#dae8ff',
+              300: '#c5dcff',
+              400: '#a0c6ff',
+              500: '#7ab0ff',
+              600: '#4d95ff',
+              700: '#2e7df0',
+              800: '#1d5ec2',
+              900: '#164996'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,0.08)'
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+
+  <!-- Base styles -->
+  <style>
+    :root { color-scheme: light dark; }
+    html, body { height: 100%; }
+    body { font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    /* Smooth anchor offset for sticky header */
+    :target { scroll-margin-top: 90px; }
+    /* Simple fade-in animation */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* Circular skill using conic-gradient */
+    .circle { width: 120px; height: 120px; border-radius: 50%; display: grid; place-items: center; }
+    .circle > span { font-weight: 600; }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Poppins, ui-sans-serif, system-ui;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.visible{visibility:visible}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-x-0{left:0px;right:0px}.-bottom-24{bottom:-6rem}.-bottom-6{bottom:-1.5rem}.-left-24{left:-6rem}.-right-20{right:-5rem}.-right-6{right:-1.5rem}.-start-3{inset-inline-start:-0.75rem}.-top-20{top:-5rem}.bottom-6{bottom:1.5rem}.left-1\/2{left:50%}.top-0{top:0px}.z-50{z-index:50}.order-1{order:1}.order-2{order:2}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-3{margin-left:0.75rem}.ms-6{margin-inline-start:1.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-square{aspect-ratio:1 / 1}.h-16{height:4rem}.h-3{height:0.75rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-\[420px\]{height:420px}.h-\[560px\]{height:560px}.min-h-screen{min-height:100vh}.w-6{width:1.5rem}.w-8{width:2rem}.w-\[0\%\]{width:0%}.w-\[420px\]{width:420px}.w-\[560px\]{width:560px}.w-fit{width:-moz-fit-content;width:fit-content}.w-full{width:100%}.max-w-7xl{max-width:80rem}.max-w-md{max-width:28rem}.max-w-xl{max-width:36rem}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.place-items-center{place-items:center}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-10{gap:2.5rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.scroll-smooth{scroll-behavior:smooth}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-s{border-inline-start-width:1px}.border-t{border-top-width:1px}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-200\/60{border-color:rgb(226 232 240 / 0.6)}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.bg-brand{--tw-bg-opacity:1;background-color:rgb(0 123 255 / var(--tw-bg-opacity, 1))}.bg-brand\/10{background-color:rgb(0 123 255 / 0.1)}.bg-brand\/90{background-color:rgb(0 123 255 / 0.9)}.bg-pastel-300\/30{background-color:rgb(197 220 255 / 0.3)}.bg-pastel-50{--tw-bg-opacity:1;background-color:rgb(248 251 255 / var(--tw-bg-opacity, 1))}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-white\/60{background-color:rgb(255 255 255 / 0.6)}.bg-white\/70{background-color:rgb(255 255 255 / 0.7)}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-white\/95{background-color:rgb(255 255 255 / 0.95)}.bg-\[conic-gradient\(theme\(colors\.brand\)_0\%_80\%\2c theme\(colors\.slate\.200\)_80\%\)\]{background-image:conic-gradient(#007BFF 0% 80%,#e2e8f0 80%)}.bg-\[conic-gradient\(theme\(colors\.brand\)_0\%_85\%\2c theme\(colors\.slate\.200\)_85\%\)\]{background-image:conic-gradient(#007BFF 0% 85%,#e2e8f0 85%)}.bg-\[conic-gradient\(theme\(colors\.brand\)_0\%_90\%\2c theme\(colors\.slate\.200\)_90\%\)\]{background-image:conic-gradient(#007BFF 0% 90%,#e2e8f0 90%)}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pt-16{padding-top:4rem}.pt-2{padding-top:0.5rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-tight{line-height:1.25}.text-brand{--tw-text-opacity:1;color:rgb(0 123 255 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-soft{--tw-shadow:0 10px 30px rgba(0,0,0,0.08);--tw-shadow-colored:0 10px 30px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.hover\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.hover\:text-brand:hover{--tw-text-opacity:1;color:rgb(0 123 255 / var(--tw-text-opacity, 1))}.hover\:opacity-95:hover{opacity:0.95}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-brand:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(0 123 255 / var(--tw-ring-opacity, 1))}.dark\:border-slate-700:is(.dark *){--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.dark\:border-slate-800:is(.dark *){--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.dark\:bg-slate-800:is(.dark *){--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-800\/80:is(.dark *){background-color:rgb(30 41 59 / 0.8)}.dark\:bg-slate-900:is(.dark *){--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-900\/40:is(.dark *){background-color:rgb(15 23 42 / 0.4)}.dark\:bg-slate-900\/60:is(.dark *){background-color:rgb(15 23 42 / 0.6)}.dark\:bg-slate-900\/95:is(.dark *){background-color:rgb(15 23 42 / 0.95)}.dark\:bg-slate-950\/20:is(.dark *){background-color:rgb(2 6 23 / 0.2)}.dark\:bg-\[conic-gradient\(theme\(colors\.brand\)_0\%_80\%\2c theme\(colors\.slate\.800\)_80\%\)\]:is(.dark *){background-image:conic-gradient(#007BFF 0% 80%,#1e293b 80%)}.dark\:bg-\[conic-gradient\(theme\(colors\.brand\)_0\%_85\%\2c theme\(colors\.slate\.800\)_85\%\)\]:is(.dark *){background-image:conic-gradient(#007BFF 0% 85%,#1e293b 85%)}.dark\:bg-\[conic-gradient\(theme\(colors\.brand\)_0\%_90\%\2c theme\(colors\.slate\.800\)_90\%\)\]:is(.dark *){background-image:conic-gradient(#007BFF 0% 90%,#1e293b 90%)}.dark\:text-slate-100:is(.dark *){--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.dark\:text-slate-300:is(.dark *){--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.dark\:text-slate-400:is(.dark *){--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.dark\:hover\:bg-slate-800:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}@media (min-width: 640px){.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-5xl{font-size:3rem;line-height:1}}@media (min-width: 768px){.md\:order-1{order:1}.md\:order-2{order:2}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-6xl{font-size:3.75rem;line-height:1}}</style></head>
+
+<body class="bg-pastel-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100">
+  <!-- ========================= NAVBAR ========================= -->
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-white/70 dark:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="flex items-center gap-2 font-semibold">
+          <div class="w-8 h-8 rounded-xl bg-brand/90 text-white grid place-items-center shadow-soft">MA</div>
+          <span>Muskan Ansari</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 font-medium">
+          <a href="#about" class="hover:text-brand">About</a>
+          <a href="#education" class="hover:text-brand">Education</a>
+          <a href="#skills" class="hover:text-brand">Skills</a>
+          <a href="#certs" class="hover:text-brand">Certifications</a>
+          <a href="#contact" class="hover:text-brand">Contact</a>
+          <button id="themeToggle" class="ml-3 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Open Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3">
+        <a href="#about" class="hover:text-brand">About</a>
+        <a href="#education" class="hover:text-brand">Education</a>
+        <a href="#skills" class="hover:text-brand">Skills</a>
+        <a href="#certs" class="hover:text-brand">Certifications</a>
+        <a href="#contact" class="hover:text-brand">Contact</a>
+        <button id="themeToggleMobile" class="mt-2 w-fit px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================= HERO ========================= -->
+  <section id="home" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <!-- Background blob -->
+    <div class="absolute -top-20 -right-20 w-[560px] h-[560px] rounded-full bg-brand/10 blur-3xl"></div>
+    <div class="absolute -bottom-24 -left-24 w-[420px] h-[420px] rounded-full bg-pastel-300/30 blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
+      <div class="reveal visible">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Muskan Ansari</h1>
+        <p class="mt-3 text-xl sm:text-2xl text-slate-600 dark:text-slate-300">Creative &amp; Passionate Professional</p>
+        <p class="mt-6 text-slate-600 dark:text-slate-300 max-w-xl">"Welcome!
+
+I’m Muskan Ansari, an aspiring engineer passionate about crafting 
+innovative and efficient solutions. With a strong grasp of engineering 
+principles and real-world problem-solving, I turn ideas into impactful 
+results. Explore my work to see how I blend technical skill, creativity,
+ and precision to build a better tomorrow."</p>
+       
+      </div>
+      <div class="reveal visible">
+        <div class="relative w-full max-w-md mx-auto">
+          <img src="./image.png" alt="Profile of Muskan Ansari" class="w-full aspect-square object-cover rounded-3xl shadow-soft border border-slate-200 dark:border-slate-800">
+          <div class="absolute -bottom-6 -right-6 bg-white/80 dark:bg-slate-800/80 backdrop-blur border border-slate-200 dark:border-slate-700 rounded-2xl px-4 py-3 shadow-soft">
+            <p class="text-sm">Urge for Opportunities</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-slate-500 hover:text-brand" aria-label="Scroll down">
+      <i class="fa-solid fa-angles-down text-2xl animate-bounce"></i>
+    </a>
+  </section>
+
+  <!-- ========================= ABOUT ========================= -->
+  <section id="about" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
+      <div class="reveal order-2 md:order-1 visible">
+        <h2 class="text-3xl font-semibold">About Me</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-300">I am a 
+detail-oriented designer and developer focused on building accessible, 
+user-centered web applications. I love translating complex ideas into 
+simple, intuitive interfaces.</p>
+        <dl class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+          <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800"><dt class="font-semibold">Date of Birth</dt><dd>14/01/2007 <!-- TODO: Replace --></dd></div>
+          <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800"><dt class="font-semibold">Nationality</dt><dd>Indian</dd></div>
+          <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800"><dt class="font-semibold">Location</dt><dd>Boisar, Maharashtra, India <!-- TODO: Replace --></dd></div>
+          <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800"><dt class="font-semibold">Languages</dt><dd>English, Hindi, Marathi <!-- TODO: Replace --></dd></div>
+        </dl>
+      </div>
+      <div class="reveal order-1 md:order-2 visible">
+        <img src="./image.png" alt="About illustration" class="w-full rounded-3xl shadow-soft border border-slate-200 dark:border-slate-800">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= EDUCATION ========================= -->
+  <section id="education" class="py-20 bg-white/60 dark:bg-slate-950/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold mb-10">Education</h2>
+      <ol class="relative border-s border-slate-200 dark:border-slate-800">
+        <!-- Item -->
+        <li class="mb-10 ms-6 reveal visible">
+          <span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-brand text-white"><i class="fa-solid fa-graduation-cap text-xs"></i></span>
+          <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/40">
+            <h3 class="font-semibold">Secondary School Certificate — Chinchani Tarapur Education Society English Medium School,Boisar West,Maharashtra</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">2022</p>
+            <p class="mt-2">Achievements: Completed my Education with 83.40% "</p>
+          </div>
+        </li>
+        <!-- Item -->
+        <li class="mb-10 ms-6 reveal visible">
+          <span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-brand text-white"><i class="fa-solid fa-building-columns text-xs"></i></span>
+          <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/40">
+            <h3 class="font-semibold">Higher Secondary Education — Vidyasankul's Sanskruti Junior College, Nagzari, Lalonde,Boisar East, Maharashtra </h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">2024</p>
+            <p class="mt-2">Achievements: Completed my Education with 64.50%</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========================= SKILLS ========================= -->
+  <section id="skills" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold mb-10">Skills</h2>
+      <div class="grid lg:grid-cols-2 gap-10">
+        <!-- Technical (progress bars + circles) -->
+        <div class="reveal visible">
+          <h3 class="font-semibold mb-4">Technical Skills</h3>
+          <div class="space-y-5">
+            <!-- Progress Bar Item -->
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>HTML</span><span>90%</span></div>
+              <div class="w-full h-3 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="h-3 rounded-full bg-brand w-[0%] js-bar" data-target="90" style="width: 90%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>CSS</span><span>85%</span></div>
+              <div class="w-full h-3 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="h-3 rounded-full bg-brand w-[0%] js-bar" data-target="85" style="width: 85%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Python</span><span>75%</span></div>
+              <div class="w-full h-3 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="h-3 rounded-full bg-brand w-[0%] js-bar" data-target="80" style="width: 80%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>JavaScript</span><span>50%</span></div>
+              <div class="w-full h-3 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div class="h-3 rounded-full bg-brand w-[0%] js-bar" data-target="80" style="width: 80%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Soft + Circular -->
+        <div class="reveal visible">
+          <h3 class="font-semibold mb-4">Soft Skills &amp; Tools</h3>
+          <ul class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <li class="text-sm p-4 rounded-2xl border border-slate-200 dark:border-slate-800">Communication — 95%</li>
+            <li class="text-sm p-4 rounded-2xl border border-slate-200 dark:border-slate-800">Teamwork — 90%</li>
+            <li class="text-sm p-4 rounded-2xl border border-slate-200 dark:border-slate-800">Problem Solving — 88%</li>
+            <li class="text-sm p-4 rounded-2xl border border-slate-200 dark:border-slate-800">Linux</li>
+            <li class="text-sm p-4 rounded-2xl border border-slate-200 dark:border-slate-800">Git &amp; GitHub</li>
+            <li class="text-sm p-4 rounded-2xl border border-slate-200 dark:border-slate-800">Bootstrap / Tailwind</li>
+          </ul>
+
+          <!-- Circular meters -->
+          <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6">
+            <div class="circle bg-[conic-gradient(theme(colors.brand)_0%_90%,theme(colors.slate.200)_90%)] dark:bg-[conic-gradient(theme(colors.brand)_0%_90%,theme(colors.slate.800)_90%)] mx-auto">
+              <span>HTML 90%</span>
+            </div>
+            <div class="circle bg-[conic-gradient(theme(colors.brand)_0%_85%,theme(colors.slate.200)_85%)] dark:bg-[conic-gradient(theme(colors.brand)_0%_85%,theme(colors.slate.800)_85%)] mx-auto">
+              <span>CSS 85%</span>
+            </div>
+            <div class="circle bg-[conic-gradient(theme(colors.brand)_0%_80%,theme(colors.slate.200)_80%)] dark:bg-[conic-gradient(theme(colors.brand)_0%_80%,theme(colors.slate.800)_80%)] mx-auto">
+              <span>Python 75%</span>
+            </div>
+            <div class="circle bg-[conic-gradient(theme(colors.brand)_0%_80%,theme(colors.slate.200)_80%)] dark:bg-[conic-gradient(theme(colors.brand)_0%_80%,theme(colors.slate.800)_80%)] mx-auto">
+              <span>Javascirpt 50%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Certifications -->
+  <section id="certs" class="py-20 bg-white/60 dark:bg-slate-950/20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold mb-6">Certifications &amp; Awards</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="reveal p-5 border rounded-2xl bg-white/70 dark:bg-slate-900/40 visible">
+          <i class="fa-solid fa-award text-brand"></i> Linux Core Concept Certification &amp; Python Development Bootcamp Certification.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= CONTACT ========================= -->
+  <section id="contact" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-semibold mb-6">Contact</h2>
+      <div class="grid lg:grid-cols-2 gap-10">
+        <!-- Info -->
+        <div class="reveal space-y-4 visible">
+          <p class="text-slate-600 dark:text-slate-300">Let's collaborate! Fill the form or reach me directly through the details below.</p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-brand"></i> <span>+91 78228 41833 <!-- TODO: Replace --></span></li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-brand"></i> <span>muskanaansari01@gmail.com <!-- TODO: Replace --></span></li>
+            <li class="flex items-center gap-3"><i class="fa-solid fa-location-dot text-brand"></i> <span>Boisar, Maharashtra, India <!-- TODO: Replace --></span></li>
+          </ul>
+          <div class="flex gap-3 pt-2 text-lg">
+            <a href="#" aria-label="LinkedIn" class="hover:text-brand"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="GitHub" class="hover:text-brand"><i class="fa-brands fa-github"></i></a>
+            <a href="#" aria-label="Instagram" class="hover:text-brand"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <!-- Form -->
+        <form class="reveal p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/40 space-y-4 visible" onsubmit="return handleSubmit(event)">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm font-medium">Name</label>
+              <input type="text" name="name" required="" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand" placeholder="Your name" value="">
+            </div>
+            <div>
+              <label class="text-sm font-medium">Email</label>
+              <input type="email" name="email" required="" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand" placeholder="you@example.com" value="">
+            </div>
+          </div>
+          <div>
+            <label class="text-sm font-medium">Subject</label>
+            <input type="text" name="subject" required="" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand" placeholder="Let's work together">
+          </div>
+          <div>
+            <label class="text-sm font-medium">Message</label>
+            <textarea name="message" rows="5" required="" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand" placeholder="Write your message..."></textarea>
+          </div>
+          <button type="submit" class="px-5 py-2.5 rounded-xl bg-brand text-white shadow-soft hover:opacity-95">Send Message</button>
+          <p id="formStatus" class="text-sm text-slate-500 dark:text-slate-400"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="py-8 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-sm">© <span id="year">2025</span> Muskan Ansari. All rights reserved.</p>
+      <a href="#home" class="text-sm hover:text-brand flex items-center gap-2"><i class="fa-solid fa-arrow-up"></i> Back to top</a>
+    </div>
+  </footer>
+
+  <!-- ========================= SCRIPTS ========================= -->
+  <script>
+    // --- Mobile menu toggle ---
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // --- Dark mode toggle with localStorage ---
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleMobile = document.getElementById('themeToggleMobile');
+
+    function setTheme(dark) {
+      const root = document.documentElement;
+      dark ? root.classList.add('dark') : root.classList.remove('dark');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    }
+    // Initialize
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    setTheme(savedTheme ? savedTheme === 'dark' : prefersDark);
+
+    function toggleTheme() { setTheme(!document.documentElement.classList.contains('dark')); }
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggleMobile.addEventListener('click', toggleTheme);
+
+    // --- Reveal on scroll ---
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => io.observe(el));
+
+    // --- Animated progress bars ---
+    const bars = document.querySelectorAll('.js-bar');
+    const ioBars = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const target = e.target.getAttribute('data-target');
+          e.target.style.width = target + '%';
+          ioBars.unobserve(e.target);
+        }
+      })
+    }, { threshold: 0.4 });
+    bars.forEach(b => ioBars.observe(b));
+
+    // --- Contact form (demo-only) ---
+    function handleSubmit(evt) {
+      evt.preventDefault();
+      const form = evt.target;
+      const data = Object.fromEntries(new FormData(form).entries());
+      // Simple validation
+      if (!data.name || !data.email || !data.subject || !data.message) return;
+      // Demo: show success message. Replace with real API/EmailJS/Formspree.
+      document.getElementById('formStatus').textContent = 'Thanks! Your message has been received.';
+      form.reset();
+      return false;
+    }
+    window.handleSubmit = handleSubmit;
+
+    // --- Year ---
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
